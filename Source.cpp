@@ -11,7 +11,7 @@ int main()
 	cin >> a;
 	cout << "Write second number: ";
 	cin >> b;
-
+	cout << "Choose operation:" << endl;
 	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division"<<endl;
 	cin >> c;
 	switch (c)
