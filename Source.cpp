@@ -4,29 +4,30 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");  //функция, отвечающая за вывод русских символов
 
-	int a,b;
-	int c;
+	int num1,num2, operation;
 	
-	cout << "Write first number: ";
-	cin >> a;
-	cout << "Write second number: ";
-	cin >> b;
 	cout << "Choose operation:" << endl;
-	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division"<<endl;
-	cin >> c;
-	switch (c)
+	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division" << endl;
+	cin >> operation;
+
+	cout << "Write first number: ";
+	cin >> num1;
+	cout << "Write second number: ";
+	cin >> num2;
+	
+	switch (operation)
 	{
 	case 1:
-		cout << "The result is " << a + b;
+		cout << "The result is " << num1 + num2;
 		break;
 	case 2:
-		cout << "The result is " << a - b;
+		cout << "The result is " << num1 - num2;
 		break;
 	case 3:
-		cout << "The result is " << a * b;
+		cout << "The result is " << num1 * num2;
 		break;
 	case 4:
-		cout << "The result is " << (float)a / b;
+		cout << "The result is " << (float)num1 / num2; 
 		break;
 	default:
 		cout << "Something goes wrong. Make sure you" << '\'' << "ve choosed the right operation.";
