@@ -1,10 +1,7 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 void main()
 {
-	setlocale(LC_ALL, "Rus");  //функция, отвечающая за вывод русских символов
-
 	float num1,num2;
 	int operation;
 
@@ -33,8 +30,6 @@ void main()
 		break;
 	default:
 		cout << "Something goes wrong. Make sure you" << '\'' << "ve choosed the right operation.";
-
-
 	}
 
 	void Quadratic_Equation();
@@ -50,8 +45,8 @@ void main()
 
 		cout << a << "x^2 + " << b << "x + " << c << "= 0" << endl;
 
-		d = b * b - 4 * a*c;
-		cout << "D = " << d<< endl;
+		d = b * b - 4 * a * c;
+		cout << "D = " << d << endl;
 
 		if (d > 0)
 		{
@@ -64,7 +59,6 @@ void main()
 		{
 			x1 = (-b + sqrt(d)) / (2 * a);
 			cout << "x1 = " << x1 << endl;
-
 		}
 		else
 		{
