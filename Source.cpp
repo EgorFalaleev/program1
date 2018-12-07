@@ -9,32 +9,42 @@ int main()
 	int operation;
 
 	cout << "Choose operation:" << endl;
-	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division" << endl;
+	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division" << '\n' << "5. Quadratic Equation" << endl;
 	cin >> operation;
 
-	cout << "Write first number: ";
-	cin >> num1;
-	cout << "Write second number: ";
-	cin >> num2;
-	
-	switch (operation)
+	if (operation <= 4 && operation>=0)
 	{
-	case 1:
-		cout << "The result is " << num1 + num2<<  endl;
-		break;
-	case 2:
-		cout << "The result is " << num1 - num2 << endl;
-		break;
-	case 3:
-		cout << "The result is " << num1 * num2 << endl;
-		break;
-	case 4:
-		cout << "The result is " << num1 / num2 << endl;
-		break;
-	default:
-		cout << "Something goes wrong. Make sure you" << '\'' << "ve choosed the right operation.";
+		cout << "Write first number: ";
+		cin >> num1;
+		cout << "Write second number: ";
+		cin >> num2;
+	
+		switch (operation)
+		{
+		case 1:
+			cout << "The result is " << num1 + num2 << endl;
+			break;
+		case 2:
+			cout << "The result is " << num1 - num2 << endl;
+			break;
+		case 3:
+			cout << "The result is " << num1 * num2 << endl;
+			break;
+		case 4:
+			cout << "The result is " << num1 / num2 << endl;
+			break;
+		}
+
 	}
-    Quadratic_Equation();
+	else if (operation ==5)
+	{
+		Quadratic_Equation();
+	}
+	else
+	{
+		cout <<  "Something goes wrong. Make sure you" << '\'' << "ve choosed the right operation.";
+	}
+
 	return 0;
 }
 
@@ -71,3 +81,7 @@ void Quadratic_Equation()
 		cout << "No roots";
 	}
 }
+
+
+// add quadratic equation to menu 
+// make quadratic equation without cin and cout
