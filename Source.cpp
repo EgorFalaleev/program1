@@ -3,7 +3,7 @@ using namespace std;
 
 void Quadratic_Equation();
 
-void main()
+int main()
 {
 	float num1,num2;
 	int operation;
@@ -35,6 +35,7 @@ void main()
 		cout << "Something goes wrong. Make sure you" << '\'' << "ve choosed the right operation.";
 	}
     Quadratic_Equation();
+	return 0;
 }
 
 void Quadratic_Equation()
