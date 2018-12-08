@@ -12,7 +12,7 @@ int main()
 	cout << "1. Addiction" << '\n' << "2. Difference" << '\n' << "3. Multiplication" << '\n' << "4. Division" << '\n' << "5. Quadratic Equation" << endl;
 	cin >> operation;
 
-	if (operation <= 4 && operation>=0)
+	if (operation <= 4 && operation>0)
 	{
 		cout << "Write first number: ";
 		cin >> num1;
