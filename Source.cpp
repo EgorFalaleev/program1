@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void Quadratic_Equation(float  &x, float &y, float &z);
+void Quadratic_Equation(float x, float y, float z, float &x1, float &x2);
 
 int main()
 {
@@ -46,7 +46,11 @@ int main()
 		cout << "Write third number (c): ";
 		cin >> c;
 
-		Quadratic_Equation(a,b,c);
+		float y1, y2;
+
+		Quadratic_Equation(a,b,c, y1, y2);
+		cout << "x1 = " << y1 << "; x2 = " << y2 << endl;
+
 	}
 	else
 	{
@@ -56,31 +60,27 @@ int main()
 	return 0;
 }
 
-void Quadratic_Equation(float  &x, float &y, float &z)
+void Quadratic_Equation(float  x, float y, float z,float &x1,float &x2)
 {
-	float d,  x1,  x2;
+	float d;
 
 	d = y * y - 4 * x * z;
-	cout << "D = " << d << endl;
 
 	if (d > 0)
 	{
 		x1 = (-y + sqrt(d)) / (2 * x);
 		x2 = (-y - sqrt(d)) / (2 * x);
 
-		cout << "x1 = " << x1 << "; x2 = " << x2 << endl;
 	}
 	else if (d == 0)
 	{
 		x1 = (-y + sqrt(d)) / (2 * x);
-		cout << "x1 = " << x1 << endl;
+		x2 = (-y + sqrt(d)) / (2 * x);
+
 	}
 	else
 	{
-		cout << "No roots";
 	}
 }
 
 
-// add quadratic equation to menu 
-// make quadratic equation without cin and cout
