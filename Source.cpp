@@ -56,8 +56,7 @@ int main()
 	cir->get_Perimeter();
 
 	IAngleCountable* anglesrect = new Rectangle();
-	anglesrect->count_Angles();
+	cout << "Rectangle has " << anglesrect->count_Angles() << " angles." << endl;
 
 	IAngleCountable* anglestrgl = new RightTriangle();
-	anglestrgl->count_Angles();
-}
+	cout << "Triangle has " << anglestrgl->count_Angles() << " angles." << endl;}
