@@ -3,61 +3,61 @@ using namespace std;
 
 class Figure
 {
-protected:
-	double height;
-	double length;
 public:
 	virtual double get_Area() = 0;
 	virtual double get_Perimeter() = 0;
 };
 
-class Angles
+class IAngleCountable
 {
-protected:
-	int number;
 public:
-	virtual void count_Angles() { cout << "Figure has " << number << "angles"; }
+	virtual int count_Angles() = 0;
 };
 
-class Rectangle : public Figure, public Angles
+class Rectangle : public Figure, public IAngleCountable
 {
 public:
-	double get_Area() { return height * length; }
-	double get_Perimeter() { return (height + length) * 2; }
+	double height, length;
+	virtual double get_Area() { return height * length; }
+	virtual double get_Perimeter() { return (height + length) * 2; }
+	virtual int count_Angles() { return 4; }
 };
 
-class RightTriangle : public Figure, public Angles
+class RightTriangle : public Figure, public IAngleCountable
 {
-private:
-	double hypotenuse = sqrt(height*height + length * length);
-public:
-	double get_Area() { return height * length / 2; }
-	double get_Perimeter() { return height + length + hypotenuse; }
+public:	
+	double get_Hypotenuse() { return sqrt(cathetus1*cathetus1 + cathetus2 * cathetus2); }
+	double cathetus1, cathetus2;
+	virtual double get_Area() { return cathetus1 * cathetus2 / 2; }
+	virtual double get_Perimeter() { return cathetus1 + cathetus2 + get_Hypotenuse(); }
+	virtual int count_Angles() { return 3; }
 };
 
 class Circle : public Figure
 {
-private:
+public:
 	double radius;
-public: 
 	double get_Area() { return radius * radius*3.14; }
 	double get_Perimeter() { return 2 * 3.14*radius; }
 };
 
-
 int main()
 {
-	Rectangle rect;
-	rect.get_Area();
-	rect.get_Perimeter();
-	rect.count_Angles();
+	Figure* rect = new Rectangle();
+	rect->get_Area();
+	rect->get_Perimeter();
 
-	RightTriangle trgl;
-	trgl.get_Area();
-	trgl.get_Perimeter();
-	trgl.count_Angles();
+	Figure* trgl = new RightTriangle();
+	trgl->get_Area();
+	trgl->get_Perimeter();
 
-	Circle cir;
-	cir.get_Area();
-	cir.get_Perimeter;
+	Figure* cir = new Circle();
+	cir->get_Area();
+	cir->get_Perimeter();
+
+	IAngleCountable* anglesrect = new Rectangle();
+	anglesrect->count_Angles();
+
+	IAngleCountable* anglestrgl = new RightTriangle();
+	anglestrgl->count_Angles();
 }
