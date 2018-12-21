@@ -46,21 +46,40 @@ public:
 
 int main()
 {
-	Figure* rect = new Rectangle(5,5);
-	cout << "Rectangle area = " << rect->get_Area() << endl;
-	cout << "Rectangle perimeter = " << rect->get_Perimeter() << endl;
-
-	Figure* trgl = new RightTriangle(10,3);
-	cout << "Triangle area = " << trgl->get_Area() << endl;
-	cout << "Triangle perimeter = " << trgl->get_Perimeter() << endl;
-
-	Figure* cir = new Circle(2);
-	cout << "Circle area =" << cir->get_Area() << endl;
-	cout << "Circle perimeter = " << cir->get_Perimeter() << endl;
-
-	IAngleCountable* anglesrect = new Rectangle(0,0);
-	cout << "Rectangle has " << anglesrect->count_Angles() << " angles." << endl;
-
-	IAngleCountable* anglestrgl = new RightTriangle(0,0);
-	cout << "Triangle has " << anglestrgl->count_Angles() << " angles." << endl;
+	int choosefigure;
+	cout << "Choose figure: " << '\n' << "1. Rectangle" << '\n' << "2. Right triangle" << '\n' << "3. Circle" << endl;
+	cin >> choosefigure;
+	switch (choosefigure)
+	{
+	case 1:
+		{
+			Figure* rect = new Rectangle(5, 5);
+			cout << "Rectangle area = " << rect->get_Area() << endl;
+			cout << "Rectangle perimeter = " << rect->get_Perimeter() << endl; 
+			IAngleCountable* anglesrect = new Rectangle(0, 0);
+			cout << "Rectangle has " << anglesrect->count_Angles() << " angles." << endl;
+			break; 
+		}
+	case 2: 
+		{
+			Figure* trgl = new RightTriangle(10, 3);
+			cout << "Triangle area = " << trgl->get_Area() << endl;
+			cout << "Triangle perimeter = " << trgl->get_Perimeter() << endl;
+			IAngleCountable* anglestrgl = new RightTriangle(0, 0);
+			cout << "Triangle has " << anglestrgl->count_Angles() << " angles." << endl;
+			break;
+		}
+	case 3:
+		{
+			Figure* cir = new Circle(2);
+			cout << "Circle area =" << cir->get_Area() << endl;
+			cout << "Circle perimeter = " << cir->get_Perimeter() << endl;
+			break;
+		}
+	default: 
+		{
+			cout << "Invalid figure" << endl;
+			break; 
+		}
+	}
 }
